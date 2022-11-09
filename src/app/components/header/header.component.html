@@ -1,0 +1,18 @@
+<div class="banner">
+    <div class="header-container">
+
+        <nav class="header">
+            <div fxHide.gt-xs>
+                <button (click)="onToggleSidenav()" aria-label="menu" class="menu-btn">
+                    <fa-icon [icon]="menuIcon"></fa-icon>
+                </button>
+            </div>
+            <a routerLink='/' class="logo">Annalisa Pe</a>
+            <ul fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+                <li *ngFor="let name of enumKeys">
+                    <a routerLink="/{{name[0]}}">{{name[1]}}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

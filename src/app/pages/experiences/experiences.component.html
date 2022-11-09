@@ -1,0 +1,12 @@
+<div class="main-wrapper">
+    <div class="experiences-wrapper" data-aos="fade-up" *ngFor="let exp of experiences">
+        <div class="experiences-wrapper__box">
+            <h2 class="working-place" data-aos="fade-right">{{exp.societa | titlecase}}</h2>
+            <h3 class="job-title" data-aos="fade-right">{{exp.jobTitle}}</h3>
+            <p data-aos="fade-right">{{exp.year}}</p>
+        </div>
+        <div class="experiences-wrapper__box">
+            {{exp.description}}
+        </div>
+    </div>
+</div>

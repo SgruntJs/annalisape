@@ -1,0 +1,12 @@
+<div class="main-wrapper">
+    <div class="education-wrapper" data-aos="fade-up" data-aos-offset="200" *ngFor="let ed of education">
+        <div class="education-wrapper__box">
+            <h2 class="working-place  txt anim-text-flow" data-aos="fade-right" gradient>{{ed.societa}}</h2>
+            <h3 class="job-title" data-aos="fade-right">{{ed.jobTitle}}</h3>
+            
+        </div>
+        <div class="education-wrapper__box">
+            <p data-aos="fade-right">{{ed.description}}</p>
+        </div>
+    </div>
+</div>

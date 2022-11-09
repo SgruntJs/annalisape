@@ -1,0 +1,15 @@
+<div class="center-wrapper">
+    <div class="skills-wrapper" data-aos="zoom-in">
+
+        <div class="skill-progress" *ngFor="let skill of skills; let i = index">
+            <div class="skill-progress__info">
+                <div class="skill-progress__type">{{skill.type}}</div>
+                <div class="skill-progress__percent">{{skill.percent}}%</div>
+            </div>
+            <div class="skill-progress__bar">
+                <mat-progress-bar mode="determinate" [value]="progress[i]"></mat-progress-bar>
+            </div>
+        </div>
+
+    </div>
+</div>

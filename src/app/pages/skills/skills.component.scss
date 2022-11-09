@@ -1,0 +1,50 @@
+@import "../../../assets/variables/styles.scss";
+.center-wrapper {
+  display: flex;
+  height: calc(100vh - 100px);
+  align-items: center;
+  overflow-x: hidden;
+  .skills-wrapper {
+    background-color: $white;
+    color: $black;
+    padding: 30px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8rem;
+    box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    @include respond-to("small") {
+      flex-direction: row;
+    }
+    a {
+      color: $azure;
+      &:hover {
+        color: $pink;
+        text-decoration: none;
+        transition: all 0.3s linear;
+      }
+    }
+    .skill-progress {
+      
+      @include respond-to("small") {
+        width: calc(50% - 10px);
+      }
+      &__info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+
+}
+
+  ::ng-deep .mat-progress-bar-fill::after {
+    background-color: $pink;
+}
+::ng-deep .mat-progress-bar-buffer {
+  background-color: $black;
+}

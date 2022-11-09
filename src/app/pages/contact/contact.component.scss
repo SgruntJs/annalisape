@@ -1,0 +1,79 @@
+@import "../../../assets/variables/styles.scss";
+
+.center-wrapper {
+  display: flex;
+  height: calc(100vh - 100px);
+  align-items: center;
+  overflow-x: hidden;
+  justify-content: center;
+ 
+  a {
+    color: $azure;
+    &:hover {
+      color: $pink;
+      text-decoration: none;
+      transition: all 0.3s linear;
+    }
+  }
+  .contacts-wrapper {
+    background-color: $white;
+    color: $black;
+    padding: 20px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8rem;
+    box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+    h1 {
+        color: $pink;
+    }
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        button {
+            width: 200px;
+            margin: 0 auto;
+        }
+    }
+    .contact-spinner {
+        margin: auto;
+    }
+    .success-message {
+        font-size: 1.4rem;
+        color: $black;
+        text-align: center;
+    }
+  }
+.submit-btn {
+    &:hover:enabled {
+            transform: translateY(-2px);
+            transition: all .2s ease-in-out;
+    }
+}
+
+}
+:host .mat-form-field {
+    margin-bottom: 10px;
+}
+
+::ng-deep .mat-form-field.mat-focused {
+    .mat-form-field-label {
+        color: $pink;
+    }
+    .mat-form-field-ripple {
+        background-color: $azure;
+    }
+    .mat-form-field-required-marker {
+        color: $pink;
+    }
+    .mat-input-element {
+        color: $black;
+    }
+}
+
+

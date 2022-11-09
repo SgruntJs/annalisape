@@ -1,0 +1,32 @@
+<div class="center-wrapper">
+    <div class="contacts-wrapper" data-aos="zoom-in">
+        <h1 data-aos="fade-right">Modulo di contatti</h1>
+        <mat-spinner *ngIf="loading" class="contact-spinner"></mat-spinner>
+
+
+        <form [formGroup]="userForm" (ngSubmit)="send(userForm.value)" class="form-container" name="userForm"
+            *ngIf="!hideForm">
+            <mat-form-field appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput [(ngModel)]="firstName" formControlName="firstName" required>
+                <mat-error *ngIf="!firstName">Errore nel testo</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Inserisci la tua email</mat-label>
+                <input matInput placeholder="pat@example.com" [(ngModel)]="email" formControlName="email" required>
+                <mat-error *ngIf="!email">Devi inserire una email</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Inserisci un messaggio</mat-label>
+                <textarea matInput required [(ngModel)]="message" formControlName="message"></textarea>
+                <mat-error *ngIf="!message">Il messaggio non può rimanere vuoto</mat-error>
+            </mat-form-field>
+
+            <button class="submit-btn" mat-raised-button color="warn" type="submit"
+                [disabled]="userForm.invalid">Contattami</button>
+
+        </form>
+
+        <p *ngIf="!isVisible" class="success-message">Grazie per avere inviato un messaggio, ti contatterò al più presto!</p>
+    </div>
+</div>

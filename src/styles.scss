@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/variables/styles.scss";
+
+html,
+body {
+  color: $white;
+}
+body {
+  margin: 0;
+  font-family: 'Josefin Sans'!important;
+  background-color: $blackMirror;
+
+  .mat-drawer-container {
+    background-color: transparent;
+  }
+  p {
+    color: $white;
+  }
+
+
+}
+
+.hinge {
+  animation: hinge 2s ease infinite;
+  transition: animation 1s linear;
+}
+@keyframes hinge {
+  0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }  
+  20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }  
+  40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; } 
+  80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; } 
+  100% { transform: translateY(700px); opacity: 0; }
+}
+.shake {
+  animation: tilt-shaking .4s ease 1 alternate;
+}
+.shake:nth-child(2) { animation-delay: .1s; }
+.shake:nth-child(3) { animation-delay: .2s; }
+.shake:nth-child(4) { animation-delay: .3s; }
+.shake:nth-child(5) { animation-delay: .4s; }
+.shake:nth-child(6) { animation-delay: .5s; }
+.shake:nth-child(7) { animation-delay: .6s; }
+.shake:nth-child(8) { animation-delay: .7s; }
+.shake:nth-child(9) { animation-delay: .8s; }
+.shake:nth-child(10) { animation-delay: .9s; }
+.shake:nth-child(11) { animation-delay: 1s; }
+
+.tilt {
+  animation: 1s tilt-shaking 2 alternate; 
+}
+
+@keyframes shake {
+  0% { transform: skewX(-15deg); }
+  5% { transform: skewX(15deg); }
+  10% { transform: skewX(-15deg); }
+  15% { transform: skewX(15deg); }
+  20% { transform: skewX(0deg); }
+  100% { transform: skewX(0deg); }  
+}
+
+@keyframes tilt-shaking {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+
+.txt {
+  display: block;
+}
+
+.anim-text-flow,
+.anim-text-flow-hover:hover {
+  /*
+   * Animation variables
+   */
+  $animationSteps: 20;
+  $animationDuration: 50;
+  $animationElement: span;
+  $animationElementsCount: 100;
+  $delayBetweenLetters: 0.2;
+
+  /*
+   * Elements settings
+   */
+  #{$animationElement} {
+    animation-name: anim-text-flow-keys;
+    animation-duration: #{$animationDuration}s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+  }
+
+  /*
+   * Keyframe loop
+   */
+  @keyframes anim-text-flow-keys {
+    @for $i from 0 through $animationSteps {
+      #{percentage($i * (1 / $animationSteps))} {
+        color: hsla(336.3, random(100), 50.4, 1);
+      }
+    }
+  }
+
+  /*
+   * Element animation delay loop
+   */
+  $totalDelayTime: $animationElementsCount * $delayBetweenLetters;
+
+  @for $i from 1 through $animationElementsCount {
+    #{$animationElement}:nth-of-type(#{$i}) {
+      animation-delay: #{($i * $delayBetweenLetters) - $totalDelayTime};
+    }
+  }
+}

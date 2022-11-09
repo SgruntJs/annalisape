@@ -1,0 +1,167 @@
+@import "../../../assets/variables/styles.scss";
+mat-toolbar {
+  transition: 700ms;
+  animation: sk-bounce 2s infinite ease-in-out;
+  flex: 1 1 80%;
+  box-sizing: border-box;
+  max-width: 80%;
+  z-index: 10;
+  
+
+  &.toolbar-nav {
+    background-color: #fff;
+    color: black;
+    z-index: 10;
+    a {
+      text-decoration: none;
+      color: $black;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+.menu-btn {
+  padding: 0;
+  min-width: 0;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  line-height: 40px;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0;
+}
+
+.navigation-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 959px) {
+  mat-toolbar {
+    border-radius: 0px;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+.banner {
+  width: 100%;
+  position: relative;
+  // z-index: 10;
+  @media (max-width: 959px) {
+    .header-container {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  border-bottom: 1px solid rgba(235, 235, 235, 0.5);
+  @include respond-to('desk') {
+    padding: 20px 100px;
+  }
+}
+nav .logo {
+  font-size: 32px;
+  letter-spacing: 1px;
+  color: $azure;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.2s linear all;
+  &:hover {
+    color: $pink;
+    transform: translateY(-3px);
+    transition: 0.2s linear all;
+  }
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+}
+nav ul li a {
+  color: $azure;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+  
+  &:hover {
+    color: $pink;
+    transform: translateY(-3px);
+    transition: 0.2s linear all;
+    // text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+    &:before {
+      content: '.';
+      color: $black;
+      font-size: 2rem;;
+      text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+      position: absolute;
+      top: -22px; 
+      right: 20px;
+    }
+  }
+}
+
+.header {
+  .menu-btn {
+    color: $white;
+  }
+}
+.header {
+  &.sticky {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    padding: 10px 20px;
+    top: 0;
+    transition: all 0.4s ease;
+    box-shadow: 0px 1px 15px rgb(0 0 0 / 10%);
+    z-index: 999;
+    .logo {
+      color: $black;
+    }
+    .menu-btn {
+      color: $black;
+    }
+    @media (min-width: 959px) {
+      padding: 10px 80px;
+    }
+    ul {
+      li {
+        a {
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+.header.sticky ul li a:hover {
+  &:before {
+    content: '';
+  }
+}
+
+
