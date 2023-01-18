@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -76,7 +77,7 @@ import { GradientDirective } from './direttive/gradient.directive';
     HttpClientModule,
     MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [[{provide: LocationStrategy, useClass: HashLocationStrategy}],],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
