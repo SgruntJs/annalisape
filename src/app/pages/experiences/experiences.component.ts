@@ -10,6 +10,12 @@ export class ExperiencesComponent implements OnInit {
 
   experiences = [
     {
+      societa: 'Red Software Systems',
+      jobTitle: 'Front End Developer/Angular',
+      year: '2022',
+      description: 'Creazione Applicazioni web  con HTML, CSS/SCSS (e utilizzo di diverse librerie frontend come bootstrap, Angular Material, PrimeNg, etc.), Angular/Typescript/Javascript. Interazione con i servizi di back-end RESTFul. Reactive Programming con RxJS Observables.'
+    },
+    {
       societa: 'Code Generations',
       jobTitle: 'Front End Developer',
       year: '2021-2022',

@@ -33,7 +33,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       type: 'Angular',
-      percent: 60
+      percent: 75
     },
     {
       type: 'Adattamento',
